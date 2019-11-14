@@ -18,16 +18,17 @@ function delete_selection(x) {
     console.log(x);
     if (quantities[x] > 0) {
         quantities[x] = quantities[x] - 1;
+        totals[x] = prices[x] * quantities[x];
+        totalOrderAmt -= prices[x];
+
     }
-    totals[x] = prices[x] * quantities[x];
-    totalOrderAmt -= prices[x];
 
     display_all();
 }
 
 function displayTotal() {
 
-    document.getElementById("total").innerHTML += "<br/><br/>Total order amount is R" + totalOrderAmt.toFixed(2);
+    document.getElementById("total").innerHTML = "<br/><br/>Total order amount is R" + totalOrderAmt.toFixed(2);
 }
 
 
